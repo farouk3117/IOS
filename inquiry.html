@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project — Italian Office General Trading Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EFE8DA; --stone-alt:#E7DFCE; --sand:#E8E2D7;
+    --ink:#16150F; --ink-deep:#13120D; --ink-black:#0e0d09;
+    --body:#57524A; --muted:#8a8378; --brass:#A9793F; --brass-lt:#C6A26A;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--stone);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  a{color:var(--brass);text-decoration:none}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif}
+  ::selection{background:var(--ink);color:var(--stone)}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;width:100%}
+  .mono{font-family:'Space Mono',monospace}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:20px clamp(20px,5vw,64px);background:rgba(244,241,235,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(22,21,15,.07)}
+  .brand{display:flex;flex-direction:column;line-height:1}
+  .brand b{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600}
+  .brand small{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.34em;margin-top:4px;color:var(--body)}
+  /* concept 19 · Seam wordmark logo */
+  .io-seam{display:block;width:auto;aspect-ratio:815/116;color:var(--ink)}
+  .io-seam text{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:800;font-size:100px;letter-spacing:2px}
+  .brand .io-seam{height:24px}
+  .foot-seam{height:30px;color:var(--stone)}
+  .reveal-seam{height:clamp(30px,4vw,46px);color:var(--stone)}
+  .back{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--body);border:1px solid rgba(22,21,15,.18);padding:11px 18px;border-radius:2px;transition:all .3s}
+  .back:hover{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+
+  /* LAYOUT */
+  .page{display:grid;grid-template-columns:0.82fr 1.18fr;min-height:calc(100vh - 66px)}
+  @media(max-width:900px){.page{grid-template-columns:1fr}}
+
+  /* LEFT rail */
+  .rail{background:var(--ink-deep);color:var(--stone);padding:clamp(48px,7vw,90px) clamp(24px,4vw,60px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+  .rail .eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;color:var(--brass-lt);margin-bottom:26px}
+  .rail h1{font-weight:400;font-size:clamp(40px,5.5vw,74px);line-height:.98;margin:0}
+  .rail h1 em{font-style:italic;color:var(--brass-lt)}
+  .rail p{color:#c9c3b8;font-size:16px;line-height:1.65;max-width:38ch;margin:26px 0 0}
+  .railmeta{margin-top:clamp(40px,6vw,72px);display:flex;flex-direction:column;gap:20px}
+  .railmeta div{border-top:1px solid rgba(198,162,106,.24);padding-top:14px}
+  .railmeta span{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--brass-lt);margin-bottom:8px}
+  .railmeta a,.railmeta p{color:var(--stone);font-size:14.5px;line-height:1.5;margin:0}
+
+  /* WhatsApp button */
+  .wa{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:14px 22px;border:1px solid rgba(198,162,106,.4);border-radius:2px;color:var(--stone);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em;transition:all .3s;align-self:flex-start}
+  .wa:hover{background:#25D366;border-color:#25D366;color:#0e0d09}
+  .wa svg{width:20px;height:20px;flex:none}
+
+  /* RIGHT form */
+  .form{padding:clamp(44px,6vw,84px) clamp(24px,4vw,64px)}
+  .form .step{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--brass);margin-bottom:20px}
+  .form h2{font-weight:400;font-size:clamp(26px,3vw,38px);margin:0 0 34px;line-height:1.1}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  .field{margin-bottom:22px;position:relative}
+  label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--body);margin-bottom:9px}
+  label .req{color:var(--brass)}
+  input,select,textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,21,15,.2);
+    padding:11px 2px;font-family:'Hanken Grotesk',sans-serif;font-size:16px;color:var(--ink);border-radius:0;transition:border-color .3s}
+  select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238a8378' stroke-width='1.4' fill='none'/></svg>");background-repeat:no-repeat;background-position:right 4px center}
+  textarea{resize:vertical;min-height:120px}
+  input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--brass)}
+  input::placeholder,textarea::placeholder{color:#b8b1a5}
+  .submit{margin-top:16px;display:inline-flex;align-items:center;gap:12px;padding:18px 40px;background:var(--ink);color:var(--stone);
+    font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .35s}
+  .submit:hover{background:var(--brass)}
+  .submit:disabled{opacity:.6;cursor:default}
+  .note{margin-top:20px;font-size:13px;color:var(--muted);line-height:1.55}
+
+  /* status */
+  #status{display:none;margin-top:24px;padding:16px 20px;border-radius:2px;font-size:14.5px;line-height:1.5}
+  #status.ok{display:block;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.4);color:#1c7a42}
+  #status.err{display:block;background:rgba(169,121,63,.1);border:1px solid rgba(169,121,63,.4);color:var(--brass)}
+
+  footer{background:var(--ink-black);color:var(--muted);padding:clamp(36px,5vw,56px) clamp(20px,5vw,64px)}
+  .fwrap{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+  .io-social{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
+    border:1px solid var(--muted);border-radius:50%;color:var(--muted);
+    transition:color .3s,border-color .3s,transform .3s}
+  .io-social:hover{color:var(--brass-lt);border-color:var(--brass-lt);transform:translateY(-2px)}
+  .io-social:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  .io-maplink{display:inline-flex;align-items:center;gap:7px;margin-top:12px;
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--brass-lt);
+    text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .3s,color .3s}
+  .io-maplink:hover{color:var(--stone);border-color:var(--brass-lt)}
+  .io-maplink svg{flex:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand" aria-label="Italian Office home">
+    <svg class="io-seam" viewBox="0 0 815 116" role="img" aria-label="Italian Office">
+      <defs>
+        <clipPath id="ioSeamTopNav"><rect x="0" y="0" width="815" height="50"/></clipPath>
+        <clipPath id="ioSeamBotNav"><rect x="0" y="58" width="815" height="58"/></clipPath>
+      </defs>
+      <text x="0" y="88" fill="currentColor" clip-path="url(#ioSeamTopNav)">ITALIAN OFFICE</text>
+      <text x="0" y="88" fill="currentColor" clip-path="url(#ioSeamBotNav)">ITALIAN OFFICE</text>
+    </svg>
+    <small style="margin-top:6px">GENERAL TRADING CO. · SINCE 1991</small>
+  </a>
+  <a href="index.html" class="back">← BACK TO SITE</a>
+</nav>
+
+<div class="page">
+  <!-- LEFT RAIL -->
+  <aside class="rail">
+    <div>
+      <div class="eyebrow">START A PROJECT</div>
+      <h1>Let's build<br>something<br><em>considered.</em></h1>
+      <p>Tell us about your space and intent. Our team reviews every inquiry and replies within two business days — from a single fit-out to a whole floor.</p>
+
+      <!-- WhatsApp: +965 6605 9865 -->
+      <a class="wa" id="waBtn" href="https://wa.me/96566059865?text=Hello%20Italian%20Office%2C%20I%27d%20like%20to%20start%20a%20project." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.66.15-.19.29-.76.95-.93 1.14-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.29-.02-.45.13-.6.13-.13.3-.34.44-.51.15-.17.2-.29.3-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.5-.17-.01-.37-.01-.56-.01-.19 0-.51.07-.77.36-.27.29-1.01.99-1.01 2.41s1.04 2.8 1.18 2.99c.15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.56-.34z M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.44 1.27 4.89L2 22l5.23-1.37C8.63 21.5 10.27 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.55 0-3.01-.44-4.24-1.2l-.3-.18-3.1.81.83-3.02-.2-.31A7.93 7.93 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+        CHAT ON WHATSAPP
+      </a>
+    </div>
+
+    <div class="railmeta">
+      <div>
+        <span>SHOWROOM</span>
+        <p>Kuwait · Salmiya — Salem Al Mubarak Street<br>Eureka Showroom, First Floor · P.O. Box 29351, Safat 13104</p><a href="https://www.google.com/maps/search/?api=1&query=Eureka%20Showroom%2C%20Salem%20Al%20Mubarak%20Street%2C%20Salmiya%2C%20Kuwait" target="_blank" rel="noopener noreferrer" class="io-maplink"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>GET DIRECTIONS</span></a>
+      </div>
+      <div>
+        <span>DIRECT</span>
+        <a href="tel:+96524810051">+965 2481 0051</a> · <a href="tel:+96524810053">0053</a> · <a href="tel:+96524810085">0085</a><br><a href="tel:+96566059865">+965 6605 9865</a> · WhatsApp<br>
+        <a href="mailto:ios@italianoffice.com.kw">ios@italianoffice.com.kw</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- RIGHT FORM -->
+  <main class="form">
+    <div class="step">INQUIRY · 01 / 01</div>
+    <h2>Project details</h2>
+
+    <form id="inquiryForm" action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms: paste your access key below (free at web3forms.com). -->
+      <input type="hidden" name="access_key" value="6f39e0e4-5b50-4002-9f68-26f00a705d7d">
+      <input type="hidden" name="subject" value="New project inquiry — Italian Office website">
+      <input type="hidden" name="from_name" value="Italian Office Website">
+      <!-- honeypot -->
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="grid2">
+        <div class="field">
+          <label>Full name <span class="req">*</span></label>
+          <input type="text" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label>Company / Organization</label>
+          <input type="text" name="company" placeholder="Optional">
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="+965 ...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Project type <span class="req">*</span></label>
+        <select name="project_type" required>
+          <option value="" disabled selected>Select a category</option>
+          <option>Office &amp; Contract Furniture</option>
+          <option>Seating</option>
+          <option>Meeting Tables</option>
+          <option>Demountable Partitions</option>
+          <option>Storage Solutions</option>
+          <option>Hotel / Hospitality Furniture</option>
+          <option>Medical / Hospital Furniture</option>
+          <option>Fit-out &amp; Turnkey Project</option>
+          <option>Other / Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tell us about the project <span class="req">*</span></label>
+        <textarea name="message" required placeholder="Scope, location, approximate size, timeline — whatever you have."></textarea>
+      </div>
+
+      <button type="submit" class="submit" id="submitBtn">Send inquiry <span class="mono">→</span></button>
+      <div class="note">By sending, you agree to be contacted about your inquiry. We reply within two business days.</div>
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+</div>
+
+<footer>
+  <div class="fwrap">
+    <div style="display:flex;flex-direction:column;line-height:1;gap:8px">
+      <svg class="io-seam foot-seam" viewBox="0 0 815 116" role="img" aria-label="Italian Office">
+        <defs>
+          <clipPath id="ioSeamTopFootQ"><rect x="0" y="0" width="815" height="50"/></clipPath>
+          <clipPath id="ioSeamBotFootQ"><rect x="0" y="58" width="815" height="58"/></clipPath>
+        </defs>
+        <text x="0" y="88" fill="currentColor" clip-path="url(#ioSeamTopFootQ)">ITALIAN OFFICE</text>
+        <text x="0" y="88" fill="currentColor" clip-path="url(#ioSeamBotFootQ)">ITALIAN OFFICE</text>
+      </svg>
+      <span class="mono" style="font-size:8.5px;letter-spacing:.4em">GENERAL TRADING CO. · SINCE 1991</span>
+    </div>
+    <a href="https://www.instagram.com/adnan_dimachk/" target="_blank" rel="noopener noreferrer" aria-label="Follow Italian Office on Instagram" class="io-social">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+        <circle cx="12" cy="12" r="4.2"></circle>
+        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle>
+      </svg>
+    </a>
+    <div class="mono" style="font-size:10.5px;letter-spacing:.1em">© 2025 · A EUREKA GROUP COMPANY · KUWAIT</div>
+  </div>
+</footer>
+
+<script>
+const form=document.getElementById('inquiryForm');
+const statusEl=document.getElementById('status');
+const btn=document.getElementById('submitBtn');
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const key=form.querySelector('[name=access_key]').value;
+  // If no key set yet, fall back to a mailto so the form is never a dead end.
+  if(!key || key==='YOUR-WEB3FORMS-ACCESS-KEY'){
+    const d=new FormData(form);
+    const body=`Name: ${d.get('name')}%0D%0ACompany: ${d.get('company')||'-'}%0D%0AEmail: ${d.get('email')}%0D%0APhone: ${d.get('phone')||'-'}%0D%0AType: ${d.get('project_type')}%0D%0A%0D%0A${(d.get('message')||'').replace(/\n/g,'%0D%0A')}`;
+    window.location.href=`mailto:ios@italianoffice.com.kw?subject=New%20project%20inquiry&body=${body}`;
+    statusEl.className='ok'; statusEl.textContent='Opening your email app to send the inquiry…';
+    return;
+  }
+  btn.disabled=true; btn.textContent='Sending…';
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    const out=await res.json();
+    if(out.success){
+      statusEl.className='ok';
+      statusEl.textContent='Thank you — your inquiry has been sent. Our team will be in touch within two business days.';
+      form.reset();
+    }else{
+      throw new Error(out.message||'Submission failed');
+    }
+  }catch(err){
+    statusEl.className='err';
+    statusEl.innerHTML='Something went wrong. Please email us directly at <a href="mailto:ios@italianoffice.com.kw">ios@italianoffice.com.kw</a> or use WhatsApp.';
+  }finally{
+    btn.disabled=false; btn.innerHTML='Send inquiry <span class="mono">→</span>';
+  }
+});
+</script>
+
+<!-- PAGE TRANSITION + SCROLL RESET -->
+<div id="pageReveal" style="position:fixed;inset:0;z-index:10000;background:var(--ink-deep);transform:translateY(0);transition:transform .6s cubic-bezier(.77,0,.18,1);pointer-events:none;display:flex;align-items:center;justify-content:center">
+  <svg class="io-seam reveal-seam" viewBox="0 0 815 116" role="img" aria-label="Italian Office" style="opacity:.9">
+    <defs>
+      <clipPath id="ioSeamTopRev"><rect x="0" y="0" width="815" height="50"/></clipPath>
+      <clipPath id="ioSeamBotRev"><rect x="0" y="58" width="815" height="58"/></clipPath>
+    </defs>
+    <text x="0" y="88" fill="currentColor" clip-path="url(#ioSeamTopRev)">ITALIAN OFFICE</text>
+    <text x="0" y="88" fill="currentColor" clip-path="url(#ioSeamBotRev)">ITALIAN OFFICE</text>
+  </svg>
+</div>
+<div id="pageWipe" style="position:fixed;inset:0;z-index:10001;background:var(--ink-deep);transform:translateY(101%);transition:transform .55s cubic-bezier(.77,0,.18,1);pointer-events:none"></div>
+<script>
+(function(){
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.scrollTo(0,0);
+  window.addEventListener('pageshow',function(e){ if(e.persisted) window.scrollTo(0,0); });
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rev=document.getElementById('pageReveal');
+  if(rm){ rev.style.display='none'; }
+  else{
+    setTimeout(function(){ rev.style.transform='translateY(-101%)';
+      setTimeout(function(){ rev.style.display='none'; },650);
+    },420);
+  }
+  document.querySelectorAll('a[href$="index.html"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(rm) return;
+      e.preventDefault();
+      var w=document.getElementById('pageWipe');
+      w.style.pointerEvents='auto';
+      requestAnimationFrame(function(){ w.style.transform='translateY(0)'; });
+      setTimeout(function(){ window.location.href=a.getAttribute('href'); },560);
+    });
+  });
+})();
+</script>
+</body>
+</html>
